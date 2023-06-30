@@ -17,19 +17,25 @@
 
 ```javascript
 const getServices = async () => {
-        try {
-            const res = await fetch("http://localhost:4000/services", {
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                }
-            });
-            const data = await res.json();
-            return setServices(data);
-        } catch (err) {
-            return console.log(err);
-        }
-    };
+  try {
+    // Étape 1: Effectuer une requête HTTP GET à l'URL spécifiée
+    const res = await fetch("http://localhost:4000/services", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+
+    // Étape 2: Analyser la réponse en tant que JSON
+    const data = await res.json();
+
+    // Étape 3: Définir les services avec les données récupérées
+    return setServices(data);
+  } catch (err) {
+    // Étape 4: Gérer les erreurs en cas d'échec de la requête
+    return console.log(err);
+  }
+};
 ```
 
 ### Utilisation dans un projet ✔️
@@ -73,4 +79,3 @@ Résolution :
 
 - J'ai ecrit un [tutoriel](...) ❌ / ✔️
 - J'ai fait une [présentation](...) ❌ / ✔️
-
