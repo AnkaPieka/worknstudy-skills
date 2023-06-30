@@ -6,36 +6,61 @@
 
 ## 🎓 J'ai compris et je peux expliquer
 
-- Comment développer en utilisant un système de *livereloading* (`nodemon` par exemple) ❌ / ✔️
-- La connexion de mon application à une base de données avec et sans ORM/ODM (avec `mongodb` puis `mongoose` par exemple) ❌ / ✔️
-- Le développement d'une API REST et GraphQL (avec les packages `express` et `graphql` par exemple) ❌ / ✔️
-- *Bonus : la manipulation des fichiers système avec `fs` et l'utilisation des streams en NodeJS* ❌ / ✔️
+- Comment développer en utilisant un système de *livereloading* (`nodemon` par exemple) ✔️
+- La connexion de mon application à une base de données avec et sans ORM/ODM (avec `mongodb` puis `mongoose` par exemple) ✔️
+- Le développement d'une API REST et GraphQL (avec les packages `express` et `graphql` par exemple) ✔️
+- *Bonus : la manipulation des fichiers système avec `fs` et l'utilisation des streams en NodeJS* ❌
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-```javascript
-// this function takes a path to a .md file of the host system and write the HTML version of this file
-// the .html file is given back
-const convertMDFileToHTML = (pathToMDfile) => /* ... path to HTML file */
-```
+// Importation du module Mongoose
+const mongoose = require('mongoose');
 
-### Utilisation dans un projet ❌ / ✔️
+// Connexion à la base de données MongoDB en utilisant l'URL stockée dans la variable d'environnement MONGODB_URI
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connexion à MongoDB réussie !")) // La connexion à MongoDB est réussie, affiche un message de succès
+  .catch((err) => console.log("Connexion à MongoDB échouée :", err.message)); // La connexion à MongoDB a échoué, affiche l'erreur rencontrée
 
-[lien github](...)
+//////////////////////
+// Définition de la fonction asynchrone "start" qui sera appelée pour démarrer le serveur
+const start = async (): Promise<void> => {
+  // Initialisation de la source de données
+  await dataSource.initialize();
+  // Construction du schéma GraphQL en utilisant la fonction "buildSchema" avec le resolver "WilderResolver"
+  const schema = await buildSchema({ resolvers: [WilderResolver] });
+  // Création d'une instance du serveur ApolloServer avec le schéma GraphQL
+  const server = new ApolloServer({ schema });
+  try {
+    // Démarrage du serveur en écoutant sur le port spécifié
+    const { url }: { url: string } = await server.listen({ port });
+    console.log(`Server ready at ${url}`);
+  } catch (err) {
+    console.log("Error starting the server");
+  }
+};
 
-Description :
+// Appel de la fonction "start" en utilisant "void" pour ignorer la promesse retournée
+void start();
 
-### Utilisation en production si applicable❌ / ✔️
 
-[lien du projet](...)
+### Utilisation dans un projet ✔️
 
-Description :
+[[lien du projet](...)](https://github.com/AnkaPieka/wilders-book-v2/tree/main)
 
-### Utilisation en environement professionnel ❌ / ✔️
+Description : Projet de début d'alternance Wild
 
-Description :
+### Utilisation en production si applicable ❌
+
+[[lien du projet](...)]
+
+Description : 
+
+### Utilisation en environement professionnel ❌ 
+
+Description : pas de back en contexte pro
 
 ## 🌐 J'utilise des ressources
 
