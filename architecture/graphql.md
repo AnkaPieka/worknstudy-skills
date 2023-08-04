@@ -8,14 +8,14 @@
 
 - la différence entre REST et GraphQL ✔️
 - les besoins auxquels répond GraphQL ✔️
-- la définition d'un schéma ❌ / ✔️ (en cours)
-- Query ❌ 
-- Mutation ❌ 
+- la définition d'un schéma✔️
+- Query ✔️ 
+- Mutation ✔️ 
 - Subscription ❌
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
 import { Field, ObjectType } from 'type-graphql';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
