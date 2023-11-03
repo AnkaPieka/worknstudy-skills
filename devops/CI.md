@@ -6,26 +6,49 @@
 
 ## 🎓 J'ai compris et je peux expliquer
 
-- les enjeux de l'integration continue ❌ / ✔️
-- la mise en place d'une github action ❌ / ✔️
+- les enjeux de l'integration continue ✔️
+- la mise en place d'une github action ✔️
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+name: client-tests-workflow
 
-[lien github](...)
+# Déclenche le workflow à chaque demande d'extraction (pull request)
+on: pull_request
 
-Description :
+jobs:
+  # Job pour les tests backend
+  test-backend:
+    # Environnement d'exécution (dans ce cas, une machine Ubuntu)
+    runs-on: ubuntu-latest
 
-### Utilisation en production si applicable❌ / ✔️
+    # Étapes à suivre dans ce job
+    steps:
+      # Étape 1 : Vérification du code
+      - name: Check out code
+        uses: actions/checkout@v2
+        # Cette étape utilise l'action "actions/checkout@v2" pour cloner le code source dans l'environnement d'exécution.
+
+      - name: Goto back and run tests
+        # Se déplacer dans le dossier "back",installer les dépendances npm puis exécuter un test en utilisant la commande "npm test ./tests/userresolver.test.ts".
+        run: cd back && npm i && npm test ./tests/userresolver.test.ts
+
+
+### Utilisation dans un projet ✔️
+
+[lien github] https://github.com/AnkaPieka/ecogeste/tree/US-16_CI
+
+Description : la branche US16 dédiée à la CI
+
+### Utilisation en production si applicable❌ 
 
 [lien du projet](...)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en environnement professionnel ❌
 
 Description :
 
