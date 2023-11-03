@@ -6,11 +6,11 @@
 
 ## 🎓 J'ai compris et je peux expliquer
 
-- l'initialisation d'un projet ❌ / ✔️
-- travailler avec des branches ❌ / ✔️
-- faire une PR ❌ / ✔️
-- utiliser git rebase pour faire des commits propres ❌ / ✔️
-- utiliser les gitHub actions ❌ / ✔️
+- l'initialisation d'un projet ✔️
+- travailler avec des branches ✔️
+- faire une PR ✔️
+- utiliser git rebase pour faire des commits propres ✔️
+- utiliser les gitHub actions ✔️
 
 ## 💻 J'utilise
 
@@ -18,19 +18,19 @@
 
 ### Utilisation dans un projet ❌ / ✔️
 
-[lien github](...)
+[lien github] tous les projets sont hébergés sur GitHub, dont le projet annuel de groupe https://github.com/AnkaPieka/ecogeste/
 
 Description :
 
-### Utilisation en production si applicable❌ / ✔️
+### Utilisation en production si applicable❌
 
 [lien du projet](...)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en environement professionnel ✔️
 
-Description :
+Description : utilisation de Git en environnement professionnel, mais le service distant utilisé est GitLab
 
 ## 🌐 J'utilise des ressources
 
